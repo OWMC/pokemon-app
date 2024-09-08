@@ -1,9 +1,37 @@
 html, body {
     font-family: sans-serif;
     margin: 0;
+    padding: 25px;
     color: #666;
 }
 
 input, button {
     font-size: 24px;
+}
+
+dl {
+    display: flex;
+    flex-wrap: wrap;  
+    font-size: 18px;
+}
+
+dt {
+    border-bottom: 1px solid #999;
+    flex-basis: 50%;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+dd {
+    border-bottom: 1px solid #999;
+    flex-basis: 50%;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.stat {
+    color: #008526;
+    font-weight: normal;
 }
