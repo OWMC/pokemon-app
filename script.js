@@ -2,15 +2,15 @@ const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 const pokemonName = document.getElementById("pokemon-name");
 const pokemonID = document.getElementById("pokemon-id");
-const pokemonWeight = document.getElementById("pokemon-weight");
-const pokemonHeight = document.getElementById("pokemon-height");
-const pokemonTypes = document.getElementById("pokemon-types");
-const pokemonHP = document.getElementById("pokemon-hp");
-const pokemonAttack = document.getElementById("pokemon-attack");
-const pokemonDefense = document.getElementById("pokemon-defense");
-const pokemonSpecialAttack = document.getElementById("pokemon-special-attack");
-const pokemonSpecialDefense = document.getElementById("pokemon-special-defense");
-const pokemonSpeed = document.getElementById("pokemon-speed");
+const pokemonWeight = document.getElementById("weight");
+const pokemonHeight = document.getElementById("height");
+const pokemonTypes = document.getElementById("types");
+const pokemonHP = document.getElementById("hp");
+const pokemonAttack = document.getElementById("attack");
+const pokemonDefense = document.getElementById("defense");
+const pokemonSpecialAttack = document.getElementById("special-attack");
+const pokemonSpecialDefense = document.getElementById("special-defense");
+const pokemonSpeed = document.getElementById("speed");
 
 const fetchData = async () => {
   try {
@@ -51,7 +51,7 @@ const displaySpecificPoke = (obj) => {
 };
 
 const displayPokemon = (obj) => {
-  const searchValue = searchInput.value// Number(searchInput.value);
+  const searchValue = searchInput.value.toLowerCase(); // Number(searchInput.value);
   let pokeIDs = [];
   let pokeNames = [];
   pokeIDs = obj.results.map(({id}) => id)
