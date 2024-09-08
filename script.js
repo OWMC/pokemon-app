@@ -5,6 +5,7 @@ const pokemonID = document.getElementById("pokemon-id");
 const pokemonWeight = document.getElementById("weight");
 const pokemonHeight = document.getElementById("height");
 const pokemonTypes = document.getElementById("types");
+const pokemonSprite = document.getElementById("img-container");
 const pokemonHP = document.getElementById("hp");
 const pokemonAttack = document.getElementById("attack");
 const pokemonDefense = document.getElementById("defense");
@@ -33,15 +34,16 @@ const fetchSpecificData = async (pokemonID) => {
 };
 
 const displaySpecificPoke = (obj) => {
-  const typesByName = [];
-  obj.types.forEach((type) =>{
-    typesByName.push(type.type.name);
-  });
-  pokemonName.innerText = obj.name;
-  pokemonID.innerText = obj.id;
+  pokemonName.innerText = obj.name.toUpperCase();
+  pokemonID.innerText = '#' + obj.id;
   pokemonWeight.innerText = obj.weight;
   pokemonHeight.innerText = obj.height;
-  pokemonTypes.innerText = typesByName;
+  pokemonTypes.innerHTML = '';
+  for (let i = 0; i < obj.types.length; i++) {
+    pokemonTypes.innerHTML += '<span class="type">' + obj.types[i].type.name.toUpperCase() + '</span> ';
+  }
+  const spriteUrl = obj.sprites.front_default;
+  pokemonSprite.innerHTML = `<img id="sprite" src="${spriteUrl}" />`;
   pokemonHP.innerText = obj.stats[0].base_stat;
   pokemonAttack.innerText = obj.stats[1].base_stat;
   pokemonDefense.innerText = obj.stats[2].base_stat;
@@ -63,7 +65,8 @@ const displayPokemon = (obj) => {
     pokemonID.innerText = '';
     pokemonWeight.innerText = '';
     pokemonHeight.innerText = '';
-    pokemonTypes.innerText = '';
+    pokemonTypes.innerHTML = '';
+    pokemonSprite.innerHTML = '';
     pokemonHP.innerText = '';
     pokemonAttack.innerText = '';
     pokemonDefense.innerText = '';
