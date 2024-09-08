@@ -9,19 +9,25 @@
   <body>
     <h1>Pokemons!</h1>
     <div>
-      <input id="search-input" type="text" />
-      <button id="search-button">Pokéhunt!</button>
-      <p>Name: </p><span id="pokemon-name"></span>
-      <p>ID: </p><span id="pokemon-id"></span>
-      <p>Weight: </p><span id="weight"></span>
-      <p>Height: </p><span id="height"></span>
-      <p>Types: </p><span id="types"></span>
-      <p>HP: </p><span id="hp"></span>
-      <p>Attack: </p><span id="attack"></span>
-      <p>Defense: </p><span id="defense"></span>
-      <p>Special-attack: </p><span id="special-attack"></span>
-      <p>Special-defense: </p><span id="special-defense"></span>
-      <p>Speed: </p><span id="speed"></span>
+      <input id="search-input" type="text" required />
+      <button id="search-button">Pokéhunt!</button><br />
+      <h2 id="pokemon-name">Name</h2>
+      <h3 class="stat" id="pokemon-id">ID</h3>
+    <dl>
+        <dt>Weight: </dt><dd class="stat" id="weight"></dd>
+        <dt>Height: </dt><dd class="stat" id="height"></dd>
+        <dt class="types">Types: </dt><dd class="stat types" id="types"></dd>
+      </dl>
+      <div id="img-container"></div>
+      <dl>
+        <dt>BASE </dt><dd>STATS</dd>
+        <dt>HP: </dt><dd class="stat" id="hp"></dd>
+        <dt>Attack: </dt><dd class="stat" id="attack"></dd>
+        <dt>Defense: </dt><dd class="stat" id="defense"></dd>
+        <dt>Special-attack: </dt><dd class="stat" id="special-attack"></dd>
+        <dt>Special-defense: </dt><dd class="stat" id="special-defense"></dd>
+        <dt>Speed: </dt><dd class="stat" id="speed"></dd>  
+      </dl>
     </div>
     <script src="./script.js"></script>
   </body>
